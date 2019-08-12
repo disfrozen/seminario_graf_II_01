@@ -1,0 +1,49 @@
+{
+	"titulados": [{
+		"institucion": "Universidad Católica",
+		"porcentaje": "04.3"
+	}, {
+    "institucion": "Universidad de Chile",
+		"porcentaje": "01.5"
+	}, {
+    "institucion": "Universidad Diego Portales",
+  	"porcentaje": "03.5"
+  }
+]
+,
+  "retencion": [{
+    "institucion": "Universidad Católica",
+    "porcentaje": 89
+  }, {
+    "institucion": "Universidad de Chile",
+    "porcentaje": 72
+  }, {
+    "institucion": "Universidad Diego Portales",
+    "porcentaje": 85
+  }
+  ]
+,
+  "duracion": [{
+    "institucion": "Universidad Católica",
+    "semestres": 11
+  }, {
+    "institucion": "Universidad de Chile",
+    "semestres": 15
+  }, {
+    "institucion": "Universidad Diego Portales",
+    "semestres": 13
+  }
+  ]
+,
+  "empleabilidad": [{
+    "institucion": "Universidad Católica",
+    "porcentaje": 70
+  }, {
+    "institucion": "Universidad de Chile",
+    "porcentaje": 72
+  }, {
+    "institucion": "Universidad Diego Portales",
+    "porcentaje": 66
+  }
+  ]
+}

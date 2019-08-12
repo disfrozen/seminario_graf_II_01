@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Análisis de la carrera de Diseño en distintas universidades</title>
+</head>
+
+<body class="bg-dark">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+        <div class="container pb-2 border-bottom">
+        <a class="navbar-brand" href="index.html">Análisis de datos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="titulados.html">Estudios continuados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="retencion.html">Retención al primer año</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="semestres.html">Semestres reales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="empleabilidad.html">Empleabilidad</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+
+
+  <section class="bg-dark py-5" id="novedad">
+  </section>
+
+  <footer class="text-muted">
+  <div class="container py-5 text-center">
+  <p>Seminario de Gráfica Computacional II 2019</p>
+  <p>Danae Conejeros - Tomás López</p>
+  </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+  <script>
+      var univ;
+      function preload(){
+          univ = loadJSON("https://api.myjson.com/bins/17l0ln");
+        // https://api.myjson.com/bins/19u87n
+      }
+      function setup() {
+          createCanvas(windowWidth-20,500).parent("novedad");
+          background(20);
+          fill(250);
+          noStroke();
+          textAlign(CENTER);
+          rectMode(CENTER);
+          text('Porcentaje de titulados de la carrera de Diseño con estudios continuos', width/2, 80);
+          univ.titulados.forEach(function(percent,i){
+              ellipse((width/4)*(1+i), (height/2)-20, percent.porcentaje*10, percent.porcentaje*10);
+              text(percent.institucion, (width/4)*(1+i), (height/2)+120, 75, 75);
+              text(percent.porcentaje + "%", (width/4)*(1+i), (height/2)+80, 75, 75);
+          });
+      }
+
+      function draw() {
+      }
+  </script>
+
+</body>
+</html>
